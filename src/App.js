@@ -1,8 +1,8 @@
+import Marcador from "./pages/Marcador";
+
 function App() {
   return (
-    <div>
-      
-    </div>
+    <Marcador />
   );
 }
 
