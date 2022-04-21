@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import Equipo from '../components/Equipo';
+import TopScore from '../components/TopScore';
 import { getEquipoLocal, getEquipoVisitante } from '../services/Equipos';
 
 export default function Marcador() {
 
     const logoNBA = 'https://i.ibb.co/k5yXNgy/nba.jpg';
     const [equipoLocal, setEquipoLocal] = useState({
-        //jugadores: []
+        nombre: '',
+        juego: '',
+        logo: '',
+        jugadores: []
     });
     const [equipoVisitante, setEquipoVisitante] = useState({
-        // jugadores: []
+        nombre: '',
+        juego: '',
+        logo: '',
+        jugadores: []
     });
     const [puntos, setPuntos] = useState({
         locales: 0,
@@ -78,6 +85,7 @@ export default function Marcador() {
                 <Equipo equipo={equipoLocal} handleCanasta={handleCanasta}/>
                 <Equipo equipo={equipoVisitante} handleCanasta={handleCanasta}/>
             </div>
+            <TopScore jugadoresEquipoLocal={equipoLocal?.jugadores} jugadoresEquipoVisitante={equipoVisitante?.jugadores}/>
         </>
     )
 }
