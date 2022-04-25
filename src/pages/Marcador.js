@@ -85,7 +85,7 @@ export default function Marcador() {
                 <Equipo equipo={equipoLocal} handleCanasta={handleCanasta}/>
                 <Equipo equipo={equipoVisitante} handleCanasta={handleCanasta}/>
             </div>
-            <TopScore jugadoresEquipoLocal={equipoLocal?.jugadores} jugadoresEquipoVisitante={equipoVisitante?.jugadores}/>
+            <TopScore equipoLocal={equipoLocal} equipoVisitante={equipoVisitante}/>
         </>
     )
 }

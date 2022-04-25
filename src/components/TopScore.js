@@ -5,12 +5,12 @@ export default function TopScore(props) {
     const [jugadores, setJugadores] = useState([])
 
     useEffect(() => {
-        let newJugadores = [...props.jugadoresEquipoLocal, ...props.jugadoresEquipoVisitante];
+        let newJugadores = [...props.equipoLocal.jugadores, ...props.equipoVisitante.jugadores];
         newJugadores.sort((a, b) => {
             return b.puntos - a.puntos // sentido descentente
         })
         setJugadores(newJugadores)
-    }, [props.jugadoresEquipoLocal, props.jugadoresEquipoVisitante])
+    }, [props.equipoLocal, props.equipoVisitante]) // Usar propiedad del estado o de las props en su primer nivel
 
     return (
         <>
